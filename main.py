@@ -26,7 +26,7 @@ class SpeedTypingApp:
         # frame
         self.frame = ctk.CTkFrame(self.root)
 
-        self.welcome_text_label = ctk.CTkLabel(self.frame, text="Rewrite the following text as fast as you can:", font=self.my_font)
+        self.welcome_text_label = ctk.CTkLabel(self.frame, text="Rewrite the following text as fast as you can:", font=("Roboto", 28))
         self.welcome_text_label.pack(padx=10, pady=40)
 
         self.sample_label = ctk.CTkLabel(self.frame, text=choice(self.texts), font=self.my_font)
@@ -60,13 +60,13 @@ class SpeedTypingApp:
                 t.start()
 
         if not self.sample_label.cget("text").startswith(self.user_input.get()):
-            self.user_input.configure(fg_color="red")
+            self.user_input.configure(fg_color="#ba1904")
         else:
             self.user_input.configure(fg_color="black")
 
         if self.user_input.get() == self.sample_label.cget("text"):
             self.running = False
-            self.user_input.configure(fg_color="green")
+            self.user_input.configure(fg_color="#05631e")
 
     # timing
     def time_thread(self):
